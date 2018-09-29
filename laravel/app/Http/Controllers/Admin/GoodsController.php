@@ -70,4 +70,8 @@ class GoodsController extends Controller
 	{
 		return view('goods.order_info');
 	}
+
+
+
+	// 	小米商城水电费大富大贵
 }
