@@ -1,25 +1,26 @@
 
-   ����ѧϰ��laravel���
+   今日学习：laravel框架
 	
-	1�����Ŀ�꣺��laravel����гɹ������hello world������ѯ���ݿ⣬�ɹ�չʾ����
+	1、完成目标：在laravel框架中成功输出“hello world”、查询数据库，成功展示数据
 
-	2��֪����laravel��ܵ�Ŀ¼�ṹ������·�������ݿ������
+	2、知道了laravel框架的目录结构、访问路径及数据库的连接
 
-	3����Ϥ��laravel��ܵ�MVC��������
+	3、熟悉了laravel框架的MVC运行流程
 
-	4��ѧϰ��Controller��������д����V��ͼ��ʹ��
+	4、学习了Controller控制器的写法、V视图的使用
 
-	5���ɹ���װGit��Source Tree ����
+	5、成功安装Git、Source Tree 软件
 
-	6��ʵ���˼򵥵�laravel��ܵ���ɾ�Ĳ�
+	6、实现了简单的laravel框架的增删改查
 
 	
-   ����ѧϰĿ�꣺
+   明日学习目标：
 
-	1����Ϥlaravel��ܵ�·��
+	1、熟悉laravel框架的路由
 	
-	2����ɽ�ʦ������Ŀ��
-������������
+	2、完成讲师的明日目标
+	
+	sdfdjdifudjfdiffgfgdfgfd
 
 	
 	
