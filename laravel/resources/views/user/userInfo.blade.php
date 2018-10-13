@@ -7,7 +7,7 @@
 			<div class="ddzx">订单中心</div>
 			<div class="subddzx">
 				<ul>
-					<li><a href="{{asset('goods/order_info')}}" >我的订单</a></li>
+					<li><a href="{{asset('order/order_info')}}" >我的订单</a></li>
 					<li><a href="">意外保</a></li>
 					<li><a href="">团购订单</a></li>
 					<li><a href="">评价晒单</a></li>
@@ -16,7 +16,7 @@
 			<div class="ddzx">个人中心</div>
 			<div class="subddzx">
 				<ul>
-					<li><a href="{{asset('goods/user_info')}}" style="color:#ff6700;font-weight:bold;">我的个人中心</a></li>
+					<li><a href="{{asset('user/user_info')}}" style="color:#ff6700;font-weight:bold;">我的个人中心</a></li>
 					<li><a href="">消息通知</a></li>
 					<li><a href="">优惠券</a></li>
 					<li><a href="">收货地址</a></li>

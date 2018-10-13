@@ -1,5 +1,5 @@
 @extends('goods.common.common')
-
+@section('body')
 <!-- self_info -->
 	<div class="grzxbj">
 		<div class="selfinfo center">
@@ -16,7 +16,7 @@
 			<div class="ddzx">个人中心</div>
 			<div class="subddzx">
 				<ul>
-					<li><a href="{{asset('goods/user_info')}}">我的个人中心</a></li>
+					<li><a href="{{asset('user/user_info')}}">我的个人中心</a></li>
 					<li><a href="">消息通知</a></li>
 					<li><a href="">优惠券</a></li>
 					<li><a href="">收货地址</a></li>
@@ -58,5 +58,4 @@
 		</div>
 	</div>
 <!-- self_info -->
-
-@extends('goods.common.footer')
+@endsection
