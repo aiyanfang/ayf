@@ -20,13 +20,41 @@ Route::get('/', function () {
 
 Route::resource('index','Admin\IndexController');			//	练习
 
-// 小米商城
+
+/**
+*	信息提示
+*/ 
+Route::get('/message','Admin\MessageController@index');
+
+
+/**
+*	商城
+*/ 	
 Route::get('goods/index','Admin\GoodsController@index');
-Route::get('goods/login','Admin\GoodsController@login');
-Route::get('goods/register','Admin\GoodsController@register');
-Route::get('goods/goods_cart','Admin\GoodsController@goods_cart');
-Route::get('goods/choose','Admin\GoodsController@choose');
-Route::get('goods/user_info','Admin\GoodsController@user_info');
-Route::get('goods/order_info','Admin\GoodsController@order_info');
-Route::get('goods/millet_list','Admin\GoodsController@millet_list');
-// Route::get('goods/user_info','Admin\GoodsController@user_info');
+Route::get('goods/details','Admin\GoodsController@details');
+Route::get('goods/milletList','Admin\GoodsController@milletList');
+
+/**
+*	用户
+*/ 	
+Route::any('user/login','Admin\UserController@login');
+Route::any('user/loginOut','Admin\UserController@loginOut');
+Route::any('user/register','Admin\UserController@register');
+Route::get('user/userInfo','Admin\UserController@userInfo');
+Route::post('user/userName','Admin\UserController@userName');
+Route::get('user/captcha/{tmp}','Admin\UserController@captcha');
+
+
+
+
+
+/**
+*	购物车
+*/ 	
+Route::get('cart/goodsCart','Admin\CartController@goodsCart');
+
+/**
+*	订单
+*/ 	
+Route::get('order/orderInfo','Admin\OrderController@orderInfo');
+

@@ -5,13 +5,13 @@ use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CartController extends Controller
+class OrderController extends Controller
 {
 	/**
-	*	购物车
+	*	订单中心
 	*/
-	public function goodsCart()
+	public function orderInfo()
 	{
-		return view('cart.goods_cart');
+		return view('order.order_info');
 	}
 }
