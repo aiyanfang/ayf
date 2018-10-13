@@ -30,10 +30,12 @@ return [
 
     'connections' => [
 
+        //  同步队列
         'sync' => [
             'driver' => 'sync',
         ],
 
+        //  以数据库为中间转存数列
         'database' => [
             'driver' => 'database',
             'table' => 'jobs',
@@ -57,6 +59,7 @@ return [
             'region' => env('SQS_REGION', 'us-east-1'),
         ],
 
+        //  Redis队列
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',

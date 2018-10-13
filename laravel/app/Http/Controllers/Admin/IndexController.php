@@ -30,7 +30,7 @@ class IndexController extends Controller
 	*/
 	public function store(Request $request)
 	{
-		$user_info = Request()->input();
+		$user_info = $request->input();
 		unset($user_info['_token']);
 		$user_res = Db::table('user')->insert($user_info);
 		if ($user_res) {

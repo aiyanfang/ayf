@@ -35,14 +35,20 @@
 					</ul>
 				</div>
 				<div class="right fr">
-					<div class="gouwuche fr"><a href="{{asset('goods/goods_cart')}}">购物车</a></div>
+					<div class="gouwuche fr"><a href="{{asset('cart/goods_cart')}}">购物车</a></div>
 					<div class="fr">
 						<ul>
-							<li><a href="{{asset('goods/login')}}" target="_blank">登录</a></li>
+							@if(!Session::get('userInfo'))
+							<li><a href="{{asset('user/login')}}">登录</a></li>
 							<li>|</li>
-							<li><a href="{{asset('goods/register')}}" target="_blank" >注册</a></li>
+							<li><a href="{{asset('user/register')}}">注册</a></li>
+							@else
+							<li>欢迎<?php $userInfo= Session::get('userInfo');echo $userInfo['username'];?>登录</li>
 							<li>|</li>
-							<li><a href="">消息通知</a></li>
+							<li><a href="{{asset('user/loginOut')}}">退出登录</a></li>
+							@endif
+							<li>|</li>
+							<li><a href="" target="_blank">消息通知</a></li>
 						</ul>
 					</div>
 					<div class="clear"></div>
