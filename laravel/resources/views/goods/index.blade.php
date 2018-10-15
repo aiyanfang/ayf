@@ -4,12 +4,10 @@
 		<div class="banner_y center">
 			<div class="nav">				
 				<ul>
-
 				@foreach ($typeData as $value)
 					<li>
 						<a href="">{{$value['type_name']}}</a>
 						<div class="pop">
-							
 							<div class="left fl">
 								<div>
 									<div class="xuangou_left fl">
