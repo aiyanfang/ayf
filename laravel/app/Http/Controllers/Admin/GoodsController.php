@@ -24,13 +24,15 @@ class GoodsController extends Controller
 
 	/**
 	*	商城首页
-	*/ 	
+	*/
 	public function index(Request $request)
 	{
+		
 		// 	查询分类表数据
-		$goodsData = $this->goodsService->getTypeAll();
-		var_dump($goodsData);die;
-		return view('goods.index',['goodsData'=>$goodsData]);
+		$typeData = $this->goodsService->getTypeAll();
+		// dd($typeData);
+		return view('goods.index',['typeData'=>$typeData]);
+
 	}
 
 	/**

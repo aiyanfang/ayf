@@ -4,9 +4,9 @@
 		<div class="banner_y center">
 			<div class="nav">				
 				<ul>
+				@foreach ($typeData as $value)
 					<li>
-						<a href="">手机</a>
-						<a href="">电话卡</a>
+						<a href="">{{$value['type_name']}}</a>
 						<div class="pop">
 							<div class="left fl">
 								<div>
@@ -21,6 +21,7 @@
 									<div class="clear"></div>
 								</div>								
 							</div>
+							
 							<div class="ctn fl">
 								<div>
 									<div class="xuangou_left fl">
@@ -51,6 +52,7 @@
 							<div class="clear"></div>
 						</div>
 					</li>
+				@endforeach
 				</ul>
 			</div>
 		</div>	
