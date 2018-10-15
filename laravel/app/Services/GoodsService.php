@@ -8,14 +8,16 @@ class GoodsService
 	/**
 	*	定义模型变量
 	*/ 
-	public $userModel;
+	public $goodsModel;
+	public $goodsTypeModel;
 
 	/**
 	*	构造函数
 	*/ 
 	public function __construct()
 	{
-		$this->userModel = new UserModel('goods_type');
+		$this->goodsModel = new UserModel('goods');
+		$this->goodsTypeModel = new UserModel('goods_type');
 	}
 
 	/**
@@ -23,35 +25,9 @@ class GoodsService
 	*/
 	public function getTypeAll()
 	{
-		$typeData = $this->userModel->getAll();
-		return $this->getTypeData($typeData);
-	}
-
-	/**
-	*	获取分类数据
-	*/ 
-	public function getTypeData(&$typeData, $parentId = '0', &$item = null, $name = 'children')
-	{
-	    $tree = [];
-	    foreach ($typeData as $key => $value) {
-	        if ($value['parent_id'] == $parentId) {
-	            self::shiftCollection($typeData, $value, $key);
-	            if ($item) $item[$name][] = $value;
-	            else $tree[] = $value;
-	        }
-	    };
-	    // var_dump($tree);die;
-	    return $tree;
-	}
-
-	/**
-	*	删除分配的元素
-	*/
-	public function shiftCollection(&$typeData, &$value, $key)
-	{
-	    unset($typeData[$key]);
-	    self::getTypeData($typeData, $value['type_id'], $value);
-	    var_dump($typeData);die;
+		$typeData = $this->goodsTypeModel->getAll();
+		return $typeData;
+		
 	}
 	
 }

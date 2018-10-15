@@ -11,9 +11,9 @@ class UserModel extends Model
 	/**
 	*	定义构造函数
 	*/ 
-	public function __construct($talbe)
+	public function __construct($table)
 	{
-		$this->table = $talbe;
+		$this->table = $table;
 	}
 
 	/**
@@ -43,6 +43,15 @@ class UserModel extends Model
 	public function whereAll($where)
 	{
 		$result = Db::table($this->table)->where($where)->get();
+		return $result = json_decode($result,true);
+	}
+
+	/**
+	*	两表联查
+	*/
+	public function getJoin($where)
+	{
+		$result = Db::table($this->table)->join($where)->get();
 		return $result = json_decode($result,true);
 	}
 
