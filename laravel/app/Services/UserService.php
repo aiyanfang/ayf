@@ -96,6 +96,20 @@ class UserService
 	}
 
 	/**
+	*	获取用户地址
+	*/ 	
+	public function getUserAddress()
+	{
+		$url ='http://ip.taobao.com/service/getIpInfo.php?ip=' ;
+        $ip = '110.96.13.134';
+        $path = $url . $ip;
+        $res = file_get_contents($path);
+        $result = json_decode($res,true);
+        $address = $result['data']['country'].$result['data']['region'].$result['data']['city'];
+        return $address;
+	}
+
+	/**
 	*	存进登录日志
 	*/
 	public function saveLoginLog($userLog)
@@ -103,6 +117,7 @@ class UserService
 		$logData = [
 			'u_id'	=>$userLog['u_id'],
 			'username'	=>$userLog['username'],
+			'address'	=>$this->getUserAddress(),
 			'ip'	=>$userLog['ip'],
 			'last_time'	=>time(),
 			'content'	=>'登录成功',
