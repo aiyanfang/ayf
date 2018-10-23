@@ -1,7 +1,9 @@
 <?php 
 namespace App\Services;
 
-use App\Models\UserModel;
+use App\Models\GoodsModel;
+use App\Models\GoodsTypeModel;
+use Illuminate\Support\Facades\Redis;
 
 class GoodsService
 {
@@ -16,8 +18,8 @@ class GoodsService
 	*/ 
 	public function __construct()
 	{
-		$this->goodsModel = new UserModel('goods');
-		$this->goodsTypeModel = new UserModel('goods_type');
+		$this->goodsModel = new GoodsModel;
+		$this->goodsTypeModel = new GoodsTypeModel;
 	}
 
 	/**
@@ -25,9 +27,49 @@ class GoodsService
 	*/
 	public function getTypeAll()
 	{
-		$typeData = $this->goodsTypeModel->getAll();
-		return $typeData;
-		
+		// 	判断是否存进redis
+		if ($data = Redis::get('data')) {
+			$data = unserialize($data);
+		}else{
+			$data = $this->goodsTypeModel->getData();
+			$data = serialize($data);
+			Redis::set('data', $data);
+		}
+		return $data;
+	}
+
+	/**
+	*	限制查询商品表数据
+	*/
+	public function getLimitAll()
+	{
+		// 	判断是否存进redis
+		if ($goodsData = Redis::get('goodsData')) {
+			$goodsData = unserialize($goodsData);
+		}else{
+			$goodsData = $this->goodsModel->getLimitAll();
+			$goodsData = serialize($goodsData);
+			Redis::set('goodsData', $goodsData);
+		}
+		return $goodsData;
+	}
+
+	/**
+	*	查询商品所有数据
+	*/
+	public function getAll()
+	{
+		$result = $this->goodsModel->getAll();
+		return $result;
 	}
 	
+	/**
+	*	查询分页所有数据
+	*/
+	public function typeAll()
+	{
+		$result = $this->goodsTypeModel->getAll();
+		return $result;
+	}
+
 }
