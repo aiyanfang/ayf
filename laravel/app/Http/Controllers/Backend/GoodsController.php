@@ -44,6 +44,6 @@ class GoodsController extends Controller
 	*/
 	public function delete()
 	{
-		
+		echo 23456;
 	}
 }
