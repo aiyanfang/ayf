@@ -18,6 +18,9 @@ class UserModel extends Model
 
 	/**
 	*	查询所有
+	*	DB::connection()->enableQueryLog(); // 开启查询日志  
+	*	$queries = DB::getQueryLog(); // 获取查询日志
+	*	dd($queries);  // 即可查看执行的sql，传入的参数等等    
 	*/
 	public function getAll()
 	{
@@ -80,9 +83,20 @@ class UserModel extends Model
 	/**
 	*	where条件修改
 	*/
-	public function updateInfo($where)
+	public function upInfo($where,$data)
 	{
-		$result = DB::talbe($this->table)->where($where)->update();
+		$result = DB::table($this->table)->where($where)->update($data);
 		return $result;
 	}
+
+	/**
+	*	where条件删除
+	*/
+	public function deleteInfo($where)
+	{
+		$result = DB::table($this->table)->where($where)->delete();
+		return $result;
+	}
+
+	
 }
