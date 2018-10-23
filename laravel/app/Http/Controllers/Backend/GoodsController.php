@@ -38,4 +38,12 @@ class GoodsController extends Controller
 			return view('backend.goods.insert',['typeData'=>$typeData]);
 		}
 	}
+
+	/**
+	*	商品删除
+	*/
+	public function delete()
+	{
+		
+	}
 }
